@@ -1,16 +1,12 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorator="layout">
 <head>
 <title>Add Employee</title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.2.0/css/bootstrap.min.css"
-      th:href="@{/webjars/bootstrap/3.2.0/css/bootstrap.min.css}"
-      rel="stylesheet" media="screen" />
-<script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.1/jquery.min.js"
-        th:src="@{/webjars/jquery/2.1.1/jquery.min.js}"></script>
 </head>
 <body>
-	<div class="container">
+	<div layout:fragment="content">
 		<h1>New Employee</h1>
 		<form role="form" action="#" th:action="@{/employees/new}"
 			th:object="${emp0}" method="POST" class="form-vertical" enctype="multipart/form-data">
@@ -55,6 +51,9 @@
 					type="reset" value="Clear" class="btn btn-default" />
 			</div>
 		</form>
+		<div th:replace="footers :: footer_all">
+			<p>Henry Patrick Karugendo</p>
+		</div>
 	</div>
 </body>
 </html>

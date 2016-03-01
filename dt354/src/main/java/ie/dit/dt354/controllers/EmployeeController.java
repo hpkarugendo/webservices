@@ -33,6 +33,8 @@ public class EmployeeController {
 	@RequestMapping(value="/employees/index", method=RequestMethod.GET)
 	public String allEmployees(Model model){
 		model.addAttribute("employees", eRepo.findAll());
+		long count = eRepo.count();
+		model.addAttribute("count", count);
 		return "employees_all";
 	}
 }

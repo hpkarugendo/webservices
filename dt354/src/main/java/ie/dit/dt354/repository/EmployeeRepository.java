@@ -8,4 +8,5 @@ import ie.dit.dt354.model.Employee;
 public interface EmployeeRepository extends CrudRepository<Employee, Long>{
 	Collection<Employee> findByDepartmentName(String department);
 	Employee findByCode(String code);
+	Employee findByEmail(String email);
 }
