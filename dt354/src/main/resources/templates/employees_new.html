@@ -8,11 +8,11 @@
 <body>
 	<div layout:fragment="content">
 		<h1>New Employee</h1>
-		<form role="form" action="#" th:action="@{/employees/new}"
+		<form role="form" action="/employees/new" th:action="@{/employees/new}"
 			th:object="${emp0}" method="POST" class="form-vertical" enctype="multipart/form-data">
 			<div class="form-group">
 				<label class="control-label">Photo:</label> 
-				<input type="file" class="btn btn-file" />
+				<input type="file" class="btn btn-file" name="file" id="file" />
 			</div>
 			<div class="form-group">
 				<label for="code">Code:</label> <input type="text"
@@ -51,9 +51,6 @@
 					type="reset" value="Clear" class="btn btn-default" />
 			</div>
 		</form>
-		<div th:replace="footers :: footer_all">
-			<p>Henry Patrick Karugendo</p>
-		</div>
 	</div>
 </body>
 </html>

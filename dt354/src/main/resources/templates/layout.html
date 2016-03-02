@@ -21,6 +21,9 @@
 	<div th:replace="headers :: header_welcome"></div>
 	<div class="panel-body">
 		<div class="container">
+			<div th:if="${message}" class="notice">
+				<h2 th:text="${message}" />
+			</div>
 			<div layout:fragment="content"></div>
 		</div>
 	</div>

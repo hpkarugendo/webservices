@@ -14,7 +14,7 @@ public class Employee {
 	private long id;
 	@ManyToOne
 	private Department department;
-	private String code, name, email, phone, position;
+	private String avatar, code, name, email, phone, position;
 	private boolean loggedIn;
 	
 	public Employee() {
@@ -23,6 +23,7 @@ public class Employee {
 
 	public Employee(String code, String name, String email, String phone, String position) {
 		super();
+		this.avatar = "";
 		this.code = code;
 		this.name = name;
 		this.email = email;
@@ -46,6 +47,14 @@ public class Employee {
 
 	public void setDepartment(Department department) {
 		this.department = department;
+	}
+
+	public String getAvatar() {
+		return avatar;
+	}
+
+	public void setAvatar(String avatar) {
+		this.avatar = avatar;
 	}
 
 	public String getCode() {
