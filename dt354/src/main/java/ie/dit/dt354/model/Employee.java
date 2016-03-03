@@ -1,7 +1,5 @@
 package ie.dit.dt354.model;
 
-import java.io.File;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
