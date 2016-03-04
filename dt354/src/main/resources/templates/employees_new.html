@@ -1,19 +1,16 @@
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml"
-  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-  layout:decorator="layout">
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout">
 <head>
 <title>Add Employee</title>
 </head>
 <body>
 	<div layout:fragment="content">
 		<h1>New Employee</h1>
-		<form role="form" action="/employees/new" th:action="@{/employees/new}"
-			th:object="${emp0}" method="POST" class="form-vertical" enctype="multipart/form-data">
-			<div class="form-group">
-				<label class="control-label">Photo:</label> 
-				<input type="file" class="btn btn-file" name="file" id="file" />
-			</div>
+		<form role="form" action="/employees/new"
+			th:action="@{/employees/new}" th:object="${emp0}" method="POST"
+			class="form-vertical">
 			<div class="form-group">
 				<label for="code">Code:</label> <input type="text"
 					th:field="*{code}" id="code" class="form-control" />
@@ -27,23 +24,24 @@
 					th:field="*{email}" id="email" class="form-control" />
 			</div>
 			<div class="form-group">
-				<label for="phone">Phone:</label> 
-				<input type="text" th:field="*{phone}" id="phone" class="form-control" />
+				<label for="phone">Phone:</label> <input type="text"
+					th:field="*{phone}" id="phone" class="form-control" />
 			</div>
 			<div class="form-group">
-				<label for="position">Position:</label> 
-				<select th:field="*{position}" class="form-control" id="position">
+				<label for="department">Department:</label> 
+				<select th:field="*{department}" class="form-control" id="department">
+					<option th:each="department:${deps}"
+						th:value="${department.id}" 
+						th:text="${department.name}">NA</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="sex">Gender:</label> 
+				<select th:field="*{sex}"
+					class="form-control" id="sex">
 					<option value="NA">NA</option>
-					<option value="MANAGER">MANAGER</option>
-					<option value="SUPERVISOR">SUPERVISOR</option>
-					<option value="ACCOUNTANT">ACCOUNTANT</option>
-					<option value="RESERVER">RESERVER</option>
-					<option value="CHEF">CHEF</option>
-					<option value="BARTENDER">BARTENDER</option>
-					<option value="WAITER">WAITER</option>
-					<option value="HOUSE KEEPER">HOUSE KEEPER</option>
-					<option value="PORTER">PORTER</option>
-					<option value="RESCEPTIONIST">RESCEPTIONIST</option>
+					<option value="MALE">MALE</option>
+					<option value="FEMALE">FEMALE</option>
 				</select>
 			</div>
 			<div class="form-group">

@@ -1,33 +1,41 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-  layout:decorator="layout">
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout">
 <head>
 <title>Employees</title>
 </head>
 <body>
 	<div layout:fragment="content">
 		<h1>Listing All Employees</h1>
-		<p th:text="'There are ' + ${count} + ' employees in the database!'">Well, this isn't working</p>
+		<p th:text="'There are ' + ${count} + ' employees in the database!'">Well,
+			this isn't working</p>
 		<table class="table table-bordered table-hover">
 			<thead>
 				<tr>
 					<th>NO</th>
+					<th>AVATAR</th>
 					<th>CODE</th>
 					<th>NAME</th>
 					<th>EMAIL</th>
 					<th>PHONE</th>
-					<th>POSITION</th>
+					<th>SEX</th>
+					<th>DEPARTMENT</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr th:each="emp,iterationStatus  : ${employees}">
 					<td th:text="${iterationStatus.count}">1</td>
+					<td th:switch="${emp.sex}">
+						<p th:case="'MALE'"><img th:src="@{/images/avatars/male-avatar.jpg}" /></p>
+						<p th:case="'FEMALE'"><img th:src="@{/images/avatars/female-avatar.jpg}" /></p>
+					</td>
 					<td th:text="${emp.code}">0000</td>
 					<td th:text="${emp.name}">Name</td>
 					<td th:text="${emp.email}">email@email.ie</td>
 					<td th:text="${emp.phone}">012223334</td>
-					<td th:text="${emp.position}">NA</td>
+					<td th:text="${emp.sex}">NA</td>
+					<td th:text="${emp.department.name}">NA</td>
 				</tr>
 			</tbody>
 		</table>

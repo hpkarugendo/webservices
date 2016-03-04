@@ -13,10 +13,12 @@
 		<div class="error">
 			<p th:text="${messageB}">Notice</p>
 		</div>
-		<h1>Welcome to Spring Boot and Thymeleaf </h1>
-		<h2>Please Signup or Signin to continue</h2>
-		<h3>Signup</h3>
-		<form role="form" action="#" th:action="@{/signup}"
+		<div class="top-deco">
+			<p><img th:src="@{/images/backgrounds/index.png}" /></p>
+			<h1>Welcome to DT354 Bistro</h1>
+			<p>Please login below to continue</p>
+		<div class="bottom-deco">
+			<form role="form" action="#" th:action="@{/login}"
 			th:object="${user}" method="POST">
 			<fieldset class="form-group">
 				<label for="email">Email: </label> 
@@ -29,14 +31,12 @@
 				<small class="text-muted">Must be at least 6 characters long.</small>
 			</fieldset>
 			<fieldset class="form-group">
-				<label for="password2">Confirm Password: </label> 
-				<input type="password" th:field="*{password2}" class="form-control" id="password2" placeholder="Retype Password" />
-			</fieldset>
-			<fieldset class="form-group">
-				<input type="submit" value="Register" class="btn btn-success" /> 
+				<input type="submit" value="Login" class="btn btn-success" /> 
 				<input type="reset" value="Clear" class="btn btn-default" />
 			</fieldset>
 		</form>
+		</div>
+		</div>
 	</div>
 </body>
 </html>

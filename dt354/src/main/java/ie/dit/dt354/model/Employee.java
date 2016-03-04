@@ -12,21 +12,20 @@ public class Employee {
 	private long id;
 	@ManyToOne
 	private Department department;
-	private String avatar, code, name, email, phone, position;
+	private String sex, code, name, email, phone;
 	private boolean loggedIn;
 	
 	public Employee() {
 		super();
 	}
 
-	public Employee(String code, String name, String email, String phone, String position) {
+	public Employee(String code, String name, String email, String phone, String sex) {
 		super();
-		this.avatar = "";
 		this.code = code;
 		this.name = name;
 		this.email = email;
 		this.phone = phone;
-		this.position = position;
+		this.sex = sex;
 		this.loggedIn = false;
 		this.department = null;
 	}
@@ -47,12 +46,12 @@ public class Employee {
 		this.department = department;
 	}
 
-	public String getAvatar() {
-		return avatar;
+	public String getSex() {
+		return sex;
 	}
 
-	public void setAvatar(String avatar) {
-		this.avatar = avatar;
+	public void setSex(String sex) {
+		this.sex = sex;
 	}
 
 	public String getCode() {
@@ -87,14 +86,6 @@ public class Employee {
 		this.phone = phone;
 	}
 
-	public String getPosition() {
-		return position;
-	}
-
-	public void setPosition(String position) {
-		this.position = position;
-	}
-
 	public boolean isLoggedIn() {
 		return loggedIn;
 	}
@@ -102,5 +93,4 @@ public class Employee {
 	public void setLoggedIn(boolean loggedIn) {
 		this.loggedIn = loggedIn;
 	}
-	
 }

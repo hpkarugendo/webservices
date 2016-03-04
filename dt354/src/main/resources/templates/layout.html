@@ -23,20 +23,20 @@
 	</div>
 	<div class="body">
 		<div class="panel-body">
-		<div class="container">
-			<div th:if="${message}" class="notice">
-				<h2 th:text="${message}" />
+			<div class="container">
+				<div th:if="${message}">
+					<h2 th:text="${message}" />
+				</div>
+				<div layout:fragment="content"></div>
 			</div>
-			<div layout:fragment="content"></div>
 		</div>
-	</div>
 	</div>
 	<div class="footer">
 		<div class="panel-footer">
-		<div th:replace="footers :: footer_all">
-			<p>Henry Patrick Karugendo</p>
+			<div th:replace="footers :: footer_all">
+				<p>Henry Patrick Karugendo</p>
+			</div>
 		</div>
-	</div>
 	</div>
 </body>
 </html>

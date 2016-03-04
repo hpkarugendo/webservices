@@ -27,12 +27,18 @@ body {
 	color: red;
 }
 
-thead {
-	background-color: black;
-	color: white;
-}
-
 form {
 	width: 40%;
 	position: relative;
 }
+
+img {
+	width : 100px;
+}
+
+.top-deco {
+	width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
